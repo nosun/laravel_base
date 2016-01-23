@@ -1,12 +1,12 @@
 <?php
 
-Route::group(['middleware' => ['web']], function () {
-    Route::get('/', [
-        'as' => 'index', 'uses' => 'Auth\AuthController@getLogin'
-    ]);
-
-
 // Admin
+
+Route::group(['middleware' => 'web'],function(){
+
+    Route::get('/', ['as' => 'index', 'uses' => 'Auth\AuthController@getLogin',]);
+    // Admin
+
     Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware'=>'auth'], function()
     {
         Route::get('/', 'AdminHomeController@index');
@@ -23,6 +23,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::put('permission/{id}','PermissionController@update');
         Route::delete('permission/{id}','PermissionController@destroy');
 
+
         Route::get('role','RoleController@index');
         Route::post('role','RoleController@store');
         Route::put('role/{id}','RoleController@update');
@@ -31,5 +32,12 @@ Route::group(['middleware' => ['web']], function () {
         Route::delete('role/{id}','RoleController@destroy');
 
     });
+
 });
 
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+});

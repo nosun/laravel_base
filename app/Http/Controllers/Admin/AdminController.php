@@ -1,4 +1,4 @@
-<?php namespace Yun\Http\Controllers\Admin;
+<?php namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;

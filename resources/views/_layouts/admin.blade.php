@@ -148,13 +148,8 @@
     try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 </script>
     <ul class="nav nav-list">
-        @if($u_data['admin']->hasRole(['test']))
-        @elseif ($u_data['admin']->company_id == 1)
-            @include('_layouts.adminSideRoot')
-        @else
-            @include('_layouts.adminSideAdmin')
-        @endif
-        @if ($u_data['admin']->hasRole(['tester']))
+
+         @include('_layouts.adminSideRoot')
         <li id="moduletest" class="hsub  open active">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon glyphicon glyphicon-wrench"></i>
@@ -172,7 +167,6 @@
                 </li>
             </ul>
         </li>
-        @endif
     </ul>
 <!-- #section:basics/sidebar.layout.minimize -->
 <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
@@ -276,7 +270,7 @@
         window.jQuery || document.write("<script src='/assets/js/jquery1x.js'>"+"<"+"/script>");
     </script>
 <script src='/assets/js/jquery.min.js'></script>
-    @if ($u_data['admin']->company_id > 1 && Auth::user()->hasRole('test'))
+
         <script>
             $(function(){
                 //隐藏非超级管理员的搜索功能
@@ -289,7 +283,6 @@
                 $(".insertinput").remove();
             });
         </script>
-    @endif
 <script type="text/javascript">
     $(document).ready(function() {
         $("#<?php

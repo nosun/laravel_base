@@ -4,7 +4,10 @@
 
 Route::group(['middleware' => 'web'],function(){
 
-    Route::get('/', ['as' => 'index', 'uses' => 'Auth\AuthController@getLogin',]);
+    Route::get('test','Test@index');
+    Route::get('/', ['as' => 'index', 'uses' => 'Auth\AuthController@getLogin']);
+    Route::post('login','Auth\AuthController@login');
+    Route::get('logout','Auth\AuthController@logout');
     // Admin
 
     Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware'=>'auth'], function()
@@ -23,7 +26,6 @@ Route::group(['middleware' => 'web'],function(){
         Route::put('permission/{id}','PermissionController@update');
         Route::delete('permission/{id}','PermissionController@destroy');
 
-
         Route::get('role','RoleController@index');
         Route::post('role','RoleController@store');
         Route::put('role/{id}','RoleController@update');
@@ -35,9 +37,3 @@ Route::group(['middleware' => 'web'],function(){
 
 });
 
-
-Route::group(['middleware' => 'web'], function () {
-    Route::auth();
-
-    Route::get('/home', 'HomeController@index');
-});

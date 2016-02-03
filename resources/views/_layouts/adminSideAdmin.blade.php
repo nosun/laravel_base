@@ -36,7 +36,7 @@
     <li id="app" class="hsub">
         <a href="#" class="dropdown-toggle">
             <i class="menu-icon glyphicon glyphicon-cloud-download"></i>
-            <span class="menu-text"> 设备管理 </span>
+            <span class="menu-text"> 管理 </span>
             <b class="arrow fa fa-angle-down"></b>
         </a>
         <b class="arrow"></b>

@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
-    <title> 云平台 </title>
+    <title> Admin Center </title>
 
     <meta name="description" content="overview &amp; stats" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -61,7 +61,7 @@
     <a href="/admin" class="navbar-brand">
         <small>
             <i class="fa fa-leaf"></i>
-            SkyWare 云平台
+            Admin Center
         </small>
     </a>
 
@@ -120,7 +120,7 @@
         <li class="divider"></li>
 
         <li>
-            <a href="/auth/logout">
+            <a href="/logout">
                 <i class="ace-icon fa fa-power-off"></i>
                 退出系统
             </a>
@@ -148,25 +148,7 @@
     try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 </script>
     <ul class="nav nav-list">
-
          @include('_layouts.adminSideRoot')
-        <li id="moduletest" class="hsub  open active">
-            <a href="#" class="dropdown-toggle">
-                <i class="menu-icon glyphicon glyphicon-wrench"></i>
-                <span class="menu-text"> 测试工具 </span>
-                <b class="arrow fa fa-angle-down"></b>
-            </a>
-            <b class="arrow"></b>
-            <ul class="submenu">
-                <li id="device">
-                    <a href="/admin/device">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                        设备列表
-                        <b class="arrow fa"></b>
-                    </a>
-                </li>
-            </ul>
-        </li>
     </ul>
 <!-- #section:basics/sidebar.layout.minimize -->
 <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
@@ -204,7 +186,7 @@
         <!-- #section:basics/footer -->
         <div class="footer-content">
                     <span class="small-120">
-                        <span class="blue bolder">Powered By <a href="http://www.skyware.com.cn" target="_blank">Skyware.com.cn</a></span>
+                        <span class="blue bolder">Powered By <a href="http://www.mingdabeta.com" target="_blank">mingdabeta.com</a></span>
                         &copy; 2014-2016
                     </span>
 

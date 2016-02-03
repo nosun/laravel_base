@@ -15,6 +15,14 @@
                 </a>
             </li>
             <b class="arrow"></b>
+            <li id="server">
+                <a href="/admin/server">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    站点配置
+                </a>
+                <b class="arrow"></b>
+            </li>
+            <b class="arrow"></b>
             <li id="cron">
                 <a href="/admin/cron">
                     <i class="menu-icon fa fa-caret-right"></i>
@@ -38,20 +46,12 @@
                 </a>
                 <b class="arrow"></b>
             </li>
-            <b class="arrow"></b>
-            <li id="server">
-                <a href="/admin/server">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    服务器管理
-                </a>
-                <b class="arrow"></b>
-            </li>
         </ul>
     </li>
     <li id="modulemanage" class="hsub">
         <a href="#" class="dropdown-toggle">
             <i class="menu-icon fa fa-leaf"></i>
-            <span class="menu-text"> 运营管理 </span>
+            <span class="menu-text"> 中心库管理 </span>
             <b class="arrow fa fa-angle-down"></b>
         </a>
         <b class="arrow"></b>
@@ -140,7 +140,7 @@
     <li id="app" class="hsub">
         <a href="#" class="dropdown-toggle">
             <i class="menu-icon glyphicon glyphicon-cloud-download"></i>
-            <span class="menu-text"> 设备管理 </span>
+            <span class="menu-text"> 站点管理 </span>
             <b class="arrow fa fa-angle-down"></b>
         </a>
         <b class="arrow"></b>
@@ -198,7 +198,7 @@
     <li id='usermanagement' class="hsub">
         <a class="dropdown-toggle" href="">
             <i class="menu-icon glyphicon glyphicon-user"></i>
-            <span class="menu-text"> 用户管理  </span>
+            <span class="menu-text"> 服务器管理  </span>
             <b class="arrow fa fa-angle-down"></b>
         </a>
 

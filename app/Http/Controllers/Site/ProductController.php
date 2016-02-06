@@ -1,10 +1,11 @@
-<?php namespace App\Http\Controllers\Admin;
+<?php namespace App\Http\Controllers\Site;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Admin\BaseController;
 
-class AdminHomeController extends AdminBaseController {
+class ProductController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,9 +16,10 @@ class AdminHomeController extends AdminBaseController {
 
 	public function index()
 	{
-        $title = '首页';
-
-		return view('admin.index',array('title'=>$title));
+        $title  = '商品管理';
+		$is_nav = 'product';
+		$list   = array();
+		return view('site.product',array('title'=>$title,'is_nav' => $is_nav,'list' => $list));
 	}
 
 	/**

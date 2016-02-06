@@ -75,7 +75,7 @@
 <!-- #section:basics/navbar.dropdown -->
 <div class="navbar-buttons navbar-header pull-right" role="navigation">
 <ul class="nav ace-nav">
-    @if (Auth::user()->hasRole('super')==true)
+    {{--@if (Auth::user()->hasRole('super')==true)--}}
         <li class="grey">
             <a href="/admin/role" title="角色">
                 <i class="fa  fa-puzzle-piece" style="font-size: 15px;"></i>
@@ -92,7 +92,7 @@
                 <i class="glyphicon glyphicon-user"></i>
             </a>
         </li>
-    @endif
+    {{--@endif--}}
 <!-- #section:basics/navbar.user_menu -->
 <li class="light-blue">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">

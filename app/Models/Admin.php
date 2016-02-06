@@ -5,7 +5,7 @@ namespace App\Models;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Admin extends Authenticatable
 {
 
     use EntrustUserTrait;
@@ -14,7 +14,7 @@ class User extends Authenticatable
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'admin';
 
     /**
      * The attributes that are mass assignable.

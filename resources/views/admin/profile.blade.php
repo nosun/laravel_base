@@ -22,30 +22,6 @@
                 </div>
 
                 <div class="col-xs-12 col-sm-9">
-            <div class="left">
-                        <a href="/admin/product">
-                        <span class="btn btn-app btn-sm btn-grey no-hover">
-                            <span class="line-height-1 bigger-170"> {{$data['product_num']}} </span>
-                            <br/>
-                            <span class="line-height-1 smaller-90"> 产品数量 </span>
-                        </span>
-                        </a>
-                        <a href="/admin/device">
-                        <span class="btn btn-app btn-sm btn-success no-hover">
-                            <span class="line-height-1 bigger-170"> {{$data['device_num']}} </span>
-                            <br/>
-                            <span class="line-height-1 smaller-90"> 设备数量 </span>
-                        </span>
-                        </a>
-                        <a href="/admin/user">
-                        <span class="btn btn-app btn-sm btn-primary no-hover">
-                            <span class="line-height-1 bigger-170"> {{$data['user_num']}} </span>
-                            <br/>
-                            <span class="line-height-1 smaller-90"> 用户数量 </span>
-                        </span>
-                        </a>
-                    </div>
-
                     <div class="space-12"></div>
 
                     <!-- #section:pages/profile.info -->
@@ -54,13 +30,6 @@
                             <div class="profile-info-name"> 用户名称 </div>
                             <div class="profile-info-value">
                                 <span class="editable" id="username">{{$user->name}}</span>
-                            </div>
-                        </div>
-
-                        <div class="profile-info-row">
-                            <div class="profile-info-name"> 公司名称 </div>
-                            <div class="profile-info-value">
-                                <span class="editable" id="country">{{$u_data['company'][$user->company_id]}}</span>
                             </div>
                         </div>
 
@@ -81,7 +50,7 @@
                         <div class="profile-info-row">
                             <div class="profile-info-name"> 最后登录 </div>
                             <div class="profile-info-value">
-                                <span class="editable" id="login">{{date('Y-m-d H:i:s',$data['login_time'])}}</span>
+                                <span class="editable" id="login"></span>
                             </div>
                         </div>
                     </div>

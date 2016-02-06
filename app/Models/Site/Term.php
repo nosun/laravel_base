@@ -1,15 +1,10 @@
 <?php
 
-namespace App\Models;
-
-use App\Models\SiteBase;
+namespace App\Models\Site;
 
 class Term extends SiteBase
 {
-
     protected $table ='terms';
     protected $primaryKey ='tid';
-    protected $connection = '';
-
 
 }

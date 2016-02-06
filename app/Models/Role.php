@@ -10,6 +10,6 @@ class Role extends EntrustRole
 
     public function users()
     {
-        return $this->belongsToMany('Model\User','role_user','user_id','role_id');
+        return $this->belongsToMany('Models\Admin','role_user','user_id','role_id');
     }
 }

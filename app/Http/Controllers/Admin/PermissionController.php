@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Models\Permission;
 use Validator;
 
-class PermissionController extends AdminBaseController {
+class PermissionController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.

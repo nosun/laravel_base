@@ -24,7 +24,6 @@
                 <thead>
                 <tr>
                     <th width="20%">用户名</th>
-                    <th width="20%">公司</th>
                     <th width="30%">角色</th>
                     <th width="10%">状态</th>
                     <th width="20%">操作</th>
@@ -36,7 +35,6 @@
                     <tr>
                         <td id="name_{{ $user->id }}">{{ $user->name }}</td>
                         <td id="email_{{ $user->id }}" style="display: none">{{ $user->email }}</td>
-                        <td id="company_{{ $user->id }}" mydata ="{{$user->company_id}}" >{{ $u_data['company'][$user->company_id] }}</td>
                         <?php
                             $role_name ='';
                             $role_id ='[';
@@ -175,16 +173,6 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="company_id" class="col-sm-2 control-label">公司</label>
-                                <div class="col-xs-12 col-sm-6">
-                                    <select name="company_id"  class="form-control" id ="editSelectCompany">
-                                        @foreach ($u_data['company'] as $key=>$value)
-                                            <option value={{$key}}>{{$value}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
 
                             <div class="form-group">
                                 <label for="status" class="col-sm-2 control-label">状态</label>
@@ -246,7 +234,6 @@
                 var url     = '/admin/admin/'+ id;
                 var methord = 'PUT';
                 var status  = $('#status_'+id).attr('mydata');
-                var company = $('#company_'+id).attr('mydata');
                 var role    = $('#role_'+id).attr('mydata');
                 role = JSON.parse(role);
                 modal.find("input[name='name']").val($('#name_'+id).html());
@@ -254,7 +241,6 @@
                 modal.find("input[name='password']").val('').attr('required',false);
                 //此处调试很久 ，主要在于value 后需要跟单引号，坑。
                 $("#editSelectStatus").find("option[value='" + status +"']").attr("selected",true);
-                $("#editSelectCompany").find("option[value='"+ company +"']").attr("selected",true);
                 //此处调试很久，原来这个地方需要json对象，字符串虽然长得像，但还是有差别的。
                 $("#editSelectRole").val(role);
             }
@@ -266,7 +252,6 @@
                 modal.find("input[name='email']").val('Email');
                 modal.find("input[name='password']").val('');
                 $("#editSelectStatus").find("option[value='1']").attr("selected",true);
-                $("#editSelectCompany").find("option[value='1']").attr("selected",true);
                 $("#editSelectRole").find("option[value='0']").attr("selected",true);
             }
             $('#myform').attr("data-url",url);
@@ -293,7 +278,6 @@
                         'name':$('input[name=name]').val(),
                         'email':$('input[name=email]').val(),
                         'password':$('input[name=password]').val(),
-                        'company_id': $('select[name=company_id]').val(),
                         'status': $('select[name=status]').val(),
                         'roles': $('select[name=roles]').val(),
                         '_token': $('input[name=_token]').val()

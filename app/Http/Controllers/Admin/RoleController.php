@@ -5,7 +5,7 @@ use App\Models\Permission;
 use App\Models\Role;
 use Validator;
 
-class RoleController extends AdminBaseController {
+class RoleController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -14,7 +14,7 @@ class RoleController extends AdminBaseController {
 	 */
 	public function index()
 	{
-		$list = Role::paginate($this->config['page']);
+		$list = Role::paginate($this->config['page_size']);
 		$title = '角色管理';
 		return view('admin.roleList',array('title'=>$title,'list'=>$list));
 	}

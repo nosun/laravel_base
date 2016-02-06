@@ -15,8 +15,8 @@
                 </a>
             </li>
             <b class="arrow"></b>
-            <li id="server">
-                <a href="/admin/server">
+            <li id="site">
+                <a href="/admin/site">
                     <i class="menu-icon fa fa-caret-right"></i>
                     站点配置
                 </a>
@@ -31,18 +31,10 @@
                 <b class="arrow"></b>
             </li>
             <b class="arrow"></b>
-            <li id="adminlog">
-                <a href="/admin/adminlog">
+            <li id="admin_log">
+                <a href="/admin/admin_log">
                     <i class="menu-icon fa fa-caret-right"></i>
                     登录日志
-                </a>
-                <b class="arrow"></b>
-            </li>
-            <b class="arrow"></b>
-            <li id="notice">
-                <a href="/admin/notice">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    公告管理
                 </a>
                 <b class="arrow"></b>
             </li>
@@ -59,79 +51,15 @@
             <li id="company">
                 <a href="/admin/company">
                     <i class="menu-icon fa fa-caret-right"></i>
-                    公司
+                    产品管理
                     <b class="arrow fa"></b>
                 </a>
             </li>
             <b class="arrow"></b>
-            <li id="product">
-                <a href="/admin/product">
+            <li id="product1">
+                <a href="/admin/product1">
                     <i class="menu-icon fa fa-caret-right"></i>
-                    产品
-                    <b class="arrow fa"></b>
-                </a>
-            </li>
-            <b class="arrow"></b>
-            <li id="uploadsn">
-                <a href="/admin/uploadsn">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    授权
-                    <b class="arrow fa"></b>
-                </a>
-            </li>
-            <b class="arrow"></b>
-            <li id="app">
-                <a href="/admin/app">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    APP
-                    <b class="arrow fa"></b>
-                </a>
-            </li>
-            <b class="arrow"></b>
-            <li id="appversion">
-                <a href="/admin/appversion">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    APP版本
-                    <b class="arrow fa"></b>
-                </a>
-            </li>
-            <b class="arrow"></b>
-            <li id="module">
-                <a href="/admin/module">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    固件
-                </a>
-                <b class="arrow"></b>
-            </li>
-            <b class="arrow"></b>
-            <li id="modulefirmware">
-                <a href="/admin/modulefirmware">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    固件版本
-                </a>
-                <b class="arrow"></b>
-            </li>
-            <b class="arrow"></b>
-            <li id="productmac">
-                <a href="/admin/productmac">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    模块
-                    <b class="arrow fa"></b>
-                </a>
-            </li>
-            <b class="arrow"></b>
-            <li id="feedback">
-                <a href="/admin/feedback">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    用户反馈
-                    <b class="arrow fa"></b>
-                </a>
-            </li>
-            <b class="arrow"></b>
-            <li id="music">
-                <a href="#">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    消息推送
+                    标签管理
                     <b class="arrow fa"></b>
                 </a>
             </li>
@@ -145,10 +73,10 @@
         </a>
         <b class="arrow"></b>
         <ul class="submenu">
-            <li id="device">
-                <a href="/admin/device">
+            <li id="product">
+                <a href="/site/product">
                     <i class="menu-icon fa fa-caret-right"></i>
-                    设备列表
+                    产品查询
                     <b class="arrow fa"></b>
                 </a>
             </li>
@@ -156,7 +84,7 @@
             <li id="productmodel">
                 <a href="/admin/productmodel">
                     <i class="menu-icon fa fa-caret-right"></i>
-                    型号管理
+                    更新权重
                     <b class="arrow fa"></b>
                 </a>
             </li>
@@ -164,7 +92,7 @@
             <li id="protocol">
                 <a href="/admin/protocol">
                     <i class="menu-icon fa fa-caret-right"></i>
-                    协议管理
+                    上传评论
                     <b class="arrow fa"></b>
                 </a>
             </li>
@@ -172,23 +100,15 @@
             <li id="devicearea">
                 <a href="/admin/devicearea">
                     <i class="menu-icon fa fa-caret-right"></i>
-                    设备分布
+                    上传tag
                     <b class="arrow fa"></b>
                 </a>
             </li>
-	        {{--<b class="arrow"></b>--}}
-            {{--<li id="cmd">--}}
-                {{--<a href="/admin/cmd">--}}
-                    {{--<i class="menu-icon fa fa-caret-right"></i>--}}
-                    {{--设备控制--}}
-                    {{--<b class="arrow fa"></b>--}}
-                {{--</a>--}}
-            {{--</li>--}}
             <b class="arrow"></b>
             <li id="cmdindex">
                 <a href="/admin/cmdindex">
                     <i class="menu-icon fa fa-caret-right"></i>
-                    设备控制
+                    产品操作
                     <b class="arrow fa"></b>
                 </a>
             </li>

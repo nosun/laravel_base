@@ -3,9 +3,9 @@
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Validator;
-use App\Models\User;
+use App\Models\Admin;
 
-class AdminController extends AdminBaseController {
+class AdminController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -14,7 +14,7 @@ class AdminController extends AdminBaseController {
 	 */
 	public function index()
 	{
-        $list = Admin::paginate($this->config['page']);
+        $list = Admin::paginate($this->config['page_size']);
         $title = '用户管理';
 		return view('admin.adminList',array('list'=>$list,'title'=>$title));
 	}

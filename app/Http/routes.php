@@ -49,13 +49,13 @@ Route::group(['middleware' => 'web'],function(){
 
         Route::get('product','ProductController@index');
         Route::get('term','TermController@index');
-        Route::get('uploadComments','UploadController@uploadComments');
+        Route::get('uploadComments','CommentController@uploadComments');
 
     });
 
 });
 
-Route::group(['prefix' => 'site','namespace' => 'Site','middleware' => 'api'],function(){
+Route::group(['prefix' => 'site','namespace' => 'Site','middleware' => ['api','auth']],function(){
     Route::post('/searchTerm/','TermController@termSearchByUrl');
     Route::post('/searchProductByUrl/','ProductController@productSearchByURL');
 });

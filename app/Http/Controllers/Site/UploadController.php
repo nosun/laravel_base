@@ -2,36 +2,66 @@
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Admin\BaseController;
 use App\Helpers\AJAX;
-use App\Modules\ProductModule;
+use App\Models\DeviceFile;
+use Config;
+use Validator;
+use Auth;
 
 class UploadController extends BaseController {
 
-	public function uploadComments()
-	{
-        $title  = '上传评论';
-		$is_nav = 'uploadComments';
-		return view('site.uploadComments',array('title'=>$title,'is_nav' => $is_nav));
-	}
+	public function uploadFile(Request $request){
+		$user = Auth::user();
 
-	public function doUploadComments(Request $request){
-		$url        = $request['url'];
-		$connection = getSiteName(getDomain($url));
-		$sn = getSn($url);
+		$file = $request->file('file');
+		$ext  = strtolower($file->getClientOriginalExtension());
+		$size = $file->getSize();
 
-		if(empty($connection) || empty($sn)){
-			return AJAX::argumentError();
+		$validator = Validator::make(
+			[
+				'file'      => $file,
+				'extension' => $ext,
+				'size'      => $size,
+			],
+			[
+				'file'      => 'required',
+				'extension' => 'required|in:csv',
+				'size'      => 'max:100000'
+			]
+		);
+
+		if($validator->fails()){
+			//dd($validator->errors());
+			return Ajax::info('file format error');
 		}
 
-		$termModule = new ProductModule($connection);
-		$result = $termModule->getProductInfo(array('sn' => $sn));
+		$destinationPath = Config::get('app.file_path') . '/' . date('Ym', time());
+		$save_path = public_path() .'/'.$destinationPath;
+		$file_name = md5($file->getClientOriginalName().time()) . '.' . $ext;
 
-		if(count($result)>0){
-			return AJAX::success(array('info'=>$result));
-		}else{
-			return AJAX::notExist();
+		if (!is_dir($save_path)) {
+			mkdir($save_path, 755, true);
+		}
+
+		if ($file->move($save_path, $file_name)) {
+			$url = url($destinationPath . '/' . $file_name);
+			$file = new DeviceFile();
+			$file->ext    = $ext;
+			$file->name   = $file_name;
+			$file->path   = $destinationPath . '/' . $file_name;
+			$file->uid    = $user->id;
+			$file->url    = $url;
+			$file->size   = $size;
+			$file->created_at = time();
+			$fid = $file->save();
+			if($fid){
+				return AJAX::success($result = array('url' => $url));
+			}else{
+				return AJAX::serverError();
+			}
+		} else {
+			return AJAX::info('upload file error');
 		}
 	}
 

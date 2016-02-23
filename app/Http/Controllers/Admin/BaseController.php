@@ -23,7 +23,6 @@ class BaseController extends Controller {
     public function init(){
 
         $this->admin = Auth::user();
-        $this->company = $this->admin->company_id;
 
         // Role
         if (!Cache::has('CacheRole')) {

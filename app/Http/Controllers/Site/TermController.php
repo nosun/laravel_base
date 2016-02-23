@@ -5,9 +5,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Admin\BaseController;
 use App\Helpers\AJAX;
-use App\Modules\ProductModule;
+use App\Modules\TermModule;
 
-class ProductController extends BaseController {
+class TermController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,26 +15,25 @@ class ProductController extends BaseController {
 	 * @return Response
 	 */
 
-
 	public function index()
 	{
-        $title  = '商品管理';
-		$is_nav = 'product';
+        $title  = 'Term Search';
+		$is_nav = 'term';
 		$list   = array();
-		return view('site.product',array('title'=>$title,'is_nav' => $is_nav,'list' => $list));
+		return view('site.term',array('title'=>$title,'is_nav' => $is_nav,'list' => $list));
 	}
 
-	public function productSearchByURL(Request $request){
+	public function termSearchByUrl(Request $request){
 		$url        = $request['url'];
 		$connection = getSiteName(getDomain($url));
-		$sn = getSn($url);
+		$path_alias = getUri($url);
 
-		if(empty($connection) || empty($sn)){
+		if(empty($connection) || empty($path_alias)){
 			return AJAX::argumentError();
 		}
 
-		$termModule = new ProductModule($connection);
-		$result = $termModule->getProductInfo(array('sn' => $sn));
+		$termModule = new TermModule($connection);
+		$result = $termModule->getTermInfo(array('path_alias' => $path_alias));
 
 		if(count($result)>0){
 			return AJAX::success(array('info'=>$result));
@@ -42,5 +41,4 @@ class ProductController extends BaseController {
 			return AJAX::notExist();
 		}
 	}
-
 }

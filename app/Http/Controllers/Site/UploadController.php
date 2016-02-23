@@ -7,24 +7,16 @@ use App\Http\Controllers\Admin\BaseController;
 use App\Helpers\AJAX;
 use App\Modules\ProductModule;
 
-class ProductController extends BaseController {
+class UploadController extends BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-
-
-	public function index()
+	public function uploadComments()
 	{
-        $title  = '商品管理';
-		$is_nav = 'product';
-		$list   = array();
-		return view('site.product',array('title'=>$title,'is_nav' => $is_nav,'list' => $list));
+        $title  = '上传评论';
+		$is_nav = 'uploadComments';
+		return view('site.uploadComments',array('title'=>$title,'is_nav' => $is_nav));
 	}
 
-	public function productSearchByURL(Request $request){
+	public function doUploadComments(Request $request){
 		$url        = $request['url'];
 		$connection = getSiteName(getDomain($url));
 		$sn = getSn($url);

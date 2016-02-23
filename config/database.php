@@ -58,7 +58,7 @@ return [
             'strict'    => false,
         ],
 
-        'adoring' => [
+        'newadoringdress' => [
             'driver'    => 'mysql',
             'host'      => 'localhost',
             'database'  => 'adoring',

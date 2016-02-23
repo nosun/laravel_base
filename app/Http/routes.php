@@ -48,8 +48,15 @@ Route::group(['middleware' => 'web'],function(){
     Route::group(['prefix' => 'site','namespace' => 'Site','middleware' => 'auth'],function(){
 
         Route::get('product','ProductController@index');
+        Route::get('term','TermController@index');
+        Route::get('uploadComments','UploadController@uploadComments');
 
     });
 
+});
+
+Route::group(['prefix' => 'site','namespace' => 'Site','middleware' => 'api'],function(){
+    Route::post('/searchTerm/','TermController@termSearchByUrl');
+    Route::post('/searchProductByUrl/','ProductController@productSearchByURL');
 });
 

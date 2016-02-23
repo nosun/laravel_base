@@ -80,6 +80,13 @@
                     <b class="arrow fa"></b>
                 </a>
             </li>
+            <li id="term">
+                <a href="/site/term">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    产品查询
+                    <b class="arrow fa"></b>
+                </a>
+            </li>
             <b class="arrow"></b>
             <li id="productmodel">
                 <a href="/admin/productmodel">
@@ -89,8 +96,8 @@
                 </a>
             </li>
             <b class="arrow"></b>
-            <li id="protocol">
-                <a href="/admin/protocol">
+            <li id="uploadComments">
+                <a href="/site/uploadComments">
                     <i class="menu-icon fa fa-caret-right"></i>
                     上传评论
                     <b class="arrow fa"></b>

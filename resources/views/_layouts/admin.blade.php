@@ -15,7 +15,7 @@
     <!-- page specific plugin styles -->
     @yield('user_css')
 
-    <link rel="stylesheet" href="/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+    <link rel="stylesheet" href="/assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
     <link rel="stylesheet" href="/assets/css/admin.css" class="ace-main-stylesheet"/>
     <!-- text fonts -->
     <link rel="stylesheet" href="/assets/css/ace-fonts.css" />
@@ -29,7 +29,6 @@
     <![endif]-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-
     <!--[if lt IE 9]>
     <script src="/assets/js/html5shiv.js"></script>
     <script src="/assets/js/respond.js"></script>
@@ -244,27 +243,28 @@
 <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
     <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 </a>
-<!-- basic scripts -->
+    <!--[if !IE]> -->
     <script type="text/javascript">
         window.jQuery || document.write("<script src='/assets/js/jquery.js'>"+"<"+"/script>");
     </script>
+
+    <!-- <![endif]-->
+
     <script type="text/javascript">
-        window.jQuery || document.write("<script src='/assets/js/jquery1x.js'>"+"<"+"/script>");
+        if('ontouchstart' in document.documentElement) document.write("<script src='/assets/js/jquery.mobile.custom.js'>"+"<"+"/script>");
     </script>
-<script src='/assets/js/jquery.min.js'></script>
+    <script>
+        $(function(){
+            //隐藏非超级管理员的搜索功能
+            //$("#searchformdiv").remove();
 
-        <script>
-            $(function(){
-                //隐藏非超级管理员的搜索功能
-                //$("#searchformdiv").remove();
-
-                //隐藏非超级管理员的操作
-                $(".dangerinput").remove();
-                $(".seccessinput").remove();
-                $(".buttoninput").remove();
-                $(".insertinput").remove();
-            });
-        </script>
+            //隐藏非超级管理员的操作
+            $(".dangerinput").remove();
+            $(".seccessinput").remove();
+            $(".buttoninput").remove();
+            $(".insertinput").remove();
+        });
+    </script>
 <script type="text/javascript">
     $(document).ready(function() {
         $("#<?php
@@ -273,11 +273,18 @@
         echo !empty($name[2])?$name[2]:'';
         ?>").addClass('active').parent().parent().addClass('active').addClass('open');
     });
-    if('ontouchstart' in document.documentElement) document.write("<script src='/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 </script>
 <script src="/assets/js/bootstrap.min.js"></script>
-<script src="/assets/js/ace.min.js"></script>
+<script src="/assets/js/ace/ace.js"></script>
 <script src="/assets/js/ace-extra.min.js"></script>
+
+<!-- ace scripts -->
+<script src="/assets/js/ace/ace.sidebar.js"></script>
+<script src="/assets/js/ace/ace.sidebar-scroll-1.js"></script>
+<script src="/assets/js/ace/ace.submenu-hover.js"></script>
+<script src="/assets/js/ace/ace.widget-box.js"></script>
+<script src="/assets/js/ace/ace.settings.js"></script>
+
 <!-- page specific plugin scripts -->
     <script type="text/javascript">
         $.ajaxSetup({

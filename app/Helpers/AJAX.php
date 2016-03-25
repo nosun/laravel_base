@@ -2,18 +2,19 @@
 
 namespace App\Helpers;
 
-define('AJAX_SUCCESS', '200');
-define('AJAX_INFO', '201');
-define('AJAX_DATA_END','202');
-define('AJAX_ARGUMENT_ERROR', '400');
-define('AJAX_SIGN_FAIL', '401');
-define('AJAX_TOKEN_FAIL', '402');
-define('AJAX_FORBIDDEN', '403');
-define('AJAX_DATA_EMPTY','404');
-define('AJAX_AJAX_SIGN_FAIL','400');
-define('AJAX_ROLE_ERROR', '406');
-define('AJAX_SERVER_ERROR','500');
-define('AJAX_CUSTOM', '999');
+define('AJAX_SUCCESS', 200);
+define('AJAX_INFO', 201);
+define('AJAX_DATA_END',202);
+define('AJAX_ARGUMENT_ERROR', 400);
+define('AJAX_SIGN_FAIL', 401);
+define('AJAX_TOKEN_FAIL', 402);
+define('AJAX_FORBIDDEN', 403);
+define('AJAX_DATA_EMPTY',404);
+define('AJAX_DATA_BAD',405);
+define('AJAX_AJAX_SIGN_FAIL',400);
+define('AJAX_ROLE_ERROR', 406);
+define('AJAX_SERVER_ERROR',500);
+define('AJAX_CUSTOM', 999);
 
 class AJAX
 {
@@ -56,6 +57,11 @@ class AJAX
     public static function notExist($allow_cross = false)
     {
         return AJAX::ajaxResponse(AJAX_DATA_EMPTY,$allow_cross);
+    }
+
+    public static function badData($data = array(),$allow_cross = false)
+    {
+        return AJAX::ajaxResponse(AJAX_DATA_BAD,$data,$allow_cross);
     }
 
     public static function success($data = array(), $allow_cross = false)

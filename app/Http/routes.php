@@ -50,13 +50,15 @@ Route::group(['middleware' => 'web'],function(){
         Route::get('product','ProductController@index');
         Route::get('term','TermController@index');
         Route::get('uploadComments','CommentController@uploadComments');
-
     });
 
 });
 
 Route::group(['prefix' => 'site','namespace' => 'Site','middleware' => ['api','auth']],function(){
-    Route::post('/searchTerm/','TermController@termSearchByUrl');
-    Route::post('/searchProductByUrl/','ProductController@productSearchByURL');
+    Route::post('searchTerm/','TermController@termSearchByUrl');
+    Route::post('searchProductByUrl/','ProductController@productSearchByURL');
+    Route::post('uploadFile','UploadController@uploadFile');
+    Route::post('addComments','CommentController@addComments');
+    Route::post('addCommentsWithTid','CommentController@addCommentsWithTid');
 });
 

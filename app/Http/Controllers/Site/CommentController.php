@@ -69,7 +69,7 @@ class CommentController extends BaseController {
 			$comment_time = $this->getCommentRandTime($start,$end);
 			$res = $commentModule->addCommentByLine($line,$comment_time,$mode);
 			if($res['code'] != 200){
-				Log::error($site.':'.$name.':'.$res['message']);
+				Log::error($site.':'.$name.$res['message']);
 				$f++;
 				continue;
 			}
@@ -87,6 +87,7 @@ class CommentController extends BaseController {
 				$items = explode("#", $line);
 				if (count($items) != $num) {
 					$bad = $line;
+					Log::info($bad);
 					break;
 				}
 			}
@@ -103,7 +104,7 @@ class CommentController extends BaseController {
 	}
 
 	protected function getFileContents($path){
-		$file = file_get_contents(public_path($path));
+		$file = trim(file_get_contents(public_path($path)),"\r\n");
 		return explode(PHP_EOL,$file);
 	}
 

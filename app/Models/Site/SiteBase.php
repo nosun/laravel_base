@@ -3,8 +3,6 @@
 namespace App\Models\Site;
 
 use Illuminate\Database\Eloquent\Model;
-use DB;
-use Log;
 
 class SiteBase extends Model
 {

@@ -276,8 +276,7 @@
 </script>
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/ace/ace.js"></script>
-<script src="/assets/js/ace-extra.min.js"></script>
-
+<script src="/assets/js/ace-extra.js"></script>
 <!-- ace scripts -->
 <script src="/assets/js/ace/ace.sidebar.js"></script>
 <script src="/assets/js/ace/ace.sidebar-scroll-1.js"></script>

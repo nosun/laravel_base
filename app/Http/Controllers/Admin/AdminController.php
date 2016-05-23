@@ -38,8 +38,8 @@ class AdminController extends BaseController {
 	{
         $data = $request->all();
         $validator = Validator::make($data, [
-            'name' => 'required|max:255|unique:yun_admin',
-            'email' => 'required|email|max:255|unique:yun_admin',
+            'name' => 'required|max:255|unique:admin',
+            'email' => 'required|email|max:255|unique:admin',
             'password' => 'required|min:6'
         ]);
 
@@ -53,7 +53,6 @@ class AdminController extends BaseController {
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'company_id' => $data['company_id'],
             'status' => $data['status']
         ]);
 
